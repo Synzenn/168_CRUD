@@ -14,3 +14,19 @@ app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
 
+const db = mysql.createConnection({
+    host:       'localhost',
+    user:       'root',
+    port:       '3309',
+    password:   'Velascoggbanget1',
+    database:   'mahasiswa'
+});
+
+db.connect((err) => {
+    if (err){
+        console.error('Error connection to the database:' + err.stack);
+        return
+    }
+    console.log('Koneksi Berhasil!');
+});
+
